@@ -1,4 +1,5 @@
 <% if !@contacts.nil? %>
+  You donot have any contacts present.
   <% @contacts.each do |c| %>
     <ul>
       <li><% =c[:name] %> : <% =c[:email] %> </li>
