@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  get "/contacts/:provider/callback" => "contacts#callback"
+  get "/contacts/:importer/callback" => "contacts#callback"
 
   get "/contacts/failure" => "contacts#failure"
   
