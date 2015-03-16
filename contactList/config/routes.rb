@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get "/contacts/:importer/callback" => "contacts#callback"
 
   get "/contacts/failure" => "contacts#failure"
+
+  root to: 'users#index', via: :get
+  get 'auth/facebook', as: "auth_provider"
+  get 'auth/facebook/callback', to: 'users#login'
+
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
