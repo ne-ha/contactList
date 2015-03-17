@@ -1,2 +1,7 @@
-<%= image_tag @user['picture']['data']['url'].to_s %>
-<%= @user['name'] %>
+<%= image_tag @loged_user['picture']['data']['url'].to_s %>
+<%= @loged_user['name'] %>
+<% @friends.each do |friend|%>
+  <ul>
+    <li><%= friend['name']%></li>
+  </ul>
+<% end %>
