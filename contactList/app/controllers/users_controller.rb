@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def login
     @token = FACEBOOK_CONFIG['token']
-    binding.pry
     @friends = FbGraph::User.me(@token).friends
   end
 end
