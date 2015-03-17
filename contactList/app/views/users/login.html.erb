@@ -1,5 +1,9 @@
-<% @friends.each do |friend|%>
-  <ul>
-    <li><%= image_tag friend.picture %><%= friend.name %></li>
-  </ul> 
-<% end %>
+<% if @friends.present?%>
+  <% @friends.each do |friend|%>
+    <ul>
+      <li><%= image_tag friend.picture %><%= friend.name %></li>
+    </ul> 
+  <% end %>
+<%else%>
+  There are no contacts present.
+<%end%>
