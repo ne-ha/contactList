@@ -198,6 +198,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   koala (~> 1.11.0rc)
+  omniauth
   omniauth-facebook
   omnicontacts
   pry-rails
