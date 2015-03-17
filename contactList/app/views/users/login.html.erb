@@ -2,6 +2,6 @@
 <%= @loged_user['name'] %>
 <% @friends.each do |friend|%>
   <ul>
-    <li><%= friend['name']%></li>
+    <li><%= image_tag friend['picture']['data']['url'].to_s %><%= friend['name']%></li>
   </ul>
 <% end %>
