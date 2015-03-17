@@ -1,14 +1,10 @@
 class UsersController < ApplicationController
-  require 'koala'
-
   def index
   end
 
   def login
-    auth = request.env["omniauth.auth"]
-    fb_access_token = auth['credentials']['token']
-    @loged_user = User.koala(request.env['omniauth.auth']['credentials'])
-    @graph = Koala::Facebook::API.new(fb_access_token)
-    @friends = @graph.get_connections("me", "friends?fields=id, name, picture.type(small)") 
+    @token = FACEBOOK_CONFIG['token']
+    binding.pry
+    @friends = FbGraph::User.me(@token).friends
   end
 end
