@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    @token = FACEBOOK_CONFIG['token']
+    @token = request.env["omniauth.auth"]['credentials']['token']
     @friends = FbGraph::User.me(@token).friends
   end
 end
